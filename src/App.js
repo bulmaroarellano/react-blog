@@ -21,11 +21,10 @@ import {
 
 //Pages
 // import CreateProducts from './Pages/CreateProducts';
-//import ProductCatalog from './Pages/ProductCatalog';
+import PostsCatalog from './Pages/PostsCatalog';
 // import ShoppingCart from './Pages/ShoppingCart';
 import CreatePosts from './Pages/CreatePosts';
-import ListPost from './Pages/ListPost';
-import PostDetail from './Pages/PostDetail';
+ import PostDetail from './Pages/PostDetail';
 //import CreatePost from './Pages/Reactions';
 
 
@@ -101,7 +100,7 @@ const App = () => {
                 <CreatePosts />
               </Route>
               <Route path="/show-posts">
-                <PostCatalog data = { productData }/>
+                <PostsCatalog data = { productData }/>
               </Route>
               {/* <Route path="/shopping-cart">
                 <ShoppingCart />

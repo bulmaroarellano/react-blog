@@ -16,24 +16,24 @@ import {
     Link
 } from 'react-router-dom'
 
-const ListPost = props => {
-    const [postCatalog, setPostCalog] = useState(null)
+const PostsCatalog = props => {
+    const [postsCatalog, setPostsCatalog] = useState(null)
     const [ collapsed, setCollapsed ] = useState( true )
     
     useEffect( async () => {
   
-        const data = await api.getAllPosts()
-        const singlePost = await api.getProductById("post1")
-        const newKey = await api.createProduct({ name:"post nuevo", 
-        description:"Post creado desde la app"})
+        const data = await api.getAllProducts()
+        const singleProduct = await api.getProductById("producto1")
+        const newKey = await api.createProduct({ name:"producto nuevo", 
+        description:"Producto creado desde la app"})
 
-        api.deletePostById("-Mj2FRPRHcxlJsQDsXDs")
-        api.patchPostById({name:"producto parchado"},"-Mj2GA7hNS7dNh-dar4G")
+        api.deleteProductById("-Mj2FRPRHcxlJsQDsXDs")
+        api.patchProductById({name:"producto parchado"},"-Mj2GA7hNS7dNh-dar4G")
 
-        setPostCatalog(data)
+        setPostsCatalog(data)
 
         console.log( data )
-        console.log( singlePost )
+        console.log( singleProduct )
        
 
     }, [])
@@ -43,18 +43,18 @@ const ListPost = props => {
     return (
         <Row>
             {
-                !productCatalog && <div className="spinner">
+                !postsCatalog && <div className="spinner">
                     <div className="dot"></div>
                 </div>
             }
             {
-                productCatalog &&
+                postsCatalog &&
                 <>
                     <h1>Catálogo de productos</h1>
                     {
-                        Object.keys(productCatalog).map(product => {
-                            console.log(productCatalog[product])
-                            const { name, description } = productCatalog[product]
+                        Object.keys(postsCatalog).map(product => {
+                            console.log(postsCatalog[product])
+                            const { name, description } = postsCatalog[product]
                             return (
                                 <Col xs="12" md="4" className="mb-3" key={product}>
                                     <Card key={product}>
@@ -99,4 +99,4 @@ const ListPost = props => {
     )
 }
 
-export default ProductCatalog
+export default PostsCatalog

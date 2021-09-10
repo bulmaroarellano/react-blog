@@ -13,11 +13,11 @@ import{
 } from 'reactstrap'
 
 const CreatePosts = () => {
-    const [productData, setProductData] = useState({})
+    const [productData, setPostData] = useState({})
     const [showAlert, setShowAlert] = useState( false )
 
     const changeHandler = event => {
-        setProductData({...productData,[event.target.name]:event.target.value})
+        setPostData({...productData,[event.target.name]:event.target.value})
     }
 
     const savePost = async () => {
@@ -42,7 +42,7 @@ const CreatePosts = () => {
                     <Label>Contenido:</Label>
                     <Input name="description" type="textarea" onChange={changeHandler} />
                 </FormGroup>
-                <Button type="button" color="dark" onClick={saveProduct}>Guardar post</Button>
+                <Button type="button" color="dark" onClick={savePost}>Guardar post</Button>
             </Form>
             {showAlert && <div className={`custom-alert ${showAlert ? 'shown':''}`}>
                 <p>Post guardado con éxito</p>
