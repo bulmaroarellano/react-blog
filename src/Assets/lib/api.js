@@ -1,26 +1,26 @@
 const BASE_URL = "https://blog-12g-default-rtdb.firebaseio.com"
 
 export default{
-    async getAllProducts(){
-        let result = await fetch(`${BASE_URL}/products/.json`)
+    async getAllPosts(){
+        let result = await fetch(`${BASE_URL}/posts/.json`)
         return await result.json() 
     },
-    async getProductById( productId ){
-        let result = await fetch(`${BASE_URL}/products/${productId}.json`)
+    async getPostById( postId ){
+        let result = await fetch(`${BASE_URL}/posts/${postId}.json`)
         return await result.json()
     },
-    async createProduct( productData ){
-        let result = await fetch(`${BASE_URL}/products/.json`,{
+    async createPosts( postData ){
+        let result = await fetch(`${BASE_URL}/posts/.json`,{
             method:"POST",
             headers:{
                 'Content-Type': 'application/json'
             },
-            body:JSON.stringify( productData )
+            body:JSON.stringify( postData )
         })
         return await result.json()
     },
-    async deleteProductById( productId ){
-        let result = await fetch(`${BASE_URL}/products/${productId}.json`,{
+    async deletePostById( postId ){
+        let result = await fetch(`${BASE_URL}/posts/${postId}.json`,{
             method:"DELETE",
             headers:{
                 'Content-Type': 'application/json'
@@ -28,13 +28,13 @@ export default{
         })
         return await result.json()
     },
-    async patchProductById( productData, productId ){
-        let result = await fetch(`${BASE_URL}/products/${productId}.json`,{
+    async patchPostById( postData, postId ){
+        let result = await fetch(`${BASE_URL}/posts/${postId}.json`,{
             method:"PATCH",
             headers:{
                 'Content-Type': 'application/json'
             },
-            body:JSON.stringify( productData )
+            body:JSON.stringify( postData )
         })
         return await result.json()
     },

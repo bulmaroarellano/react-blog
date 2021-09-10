@@ -12,7 +12,7 @@ import{
     Col
 } from 'reactstrap'
 
-const CreateProducts = () => {
+const CreatePosts = () => {
     const [productData, setProductData] = useState({})
     const [showAlert, setShowAlert] = useState( false )
 
@@ -20,8 +20,8 @@ const CreateProducts = () => {
         setProductData({...productData,[event.target.name]:event.target.value})
     }
 
-    const saveProduct = async () => {
-        const result = await api.createProduct( productData )
+    const savePost = async () => {
+        const result = await api.createPosts( productData )
         result && setShowAlert( true )
         setTimeout( function(){
             setShowAlert( false )
@@ -42,13 +42,13 @@ const CreateProducts = () => {
                     <Label>Contenido:</Label>
                     <Input name="description" type="textarea" onChange={changeHandler} />
                 </FormGroup>
-                <Button type="button" color="dark" onClick={saveProduct}>Guardar producto</Button>
+                <Button type="button" color="dark" onClick={saveProduct}>Guardar post</Button>
             </Form>
             {showAlert && <div className={`custom-alert ${showAlert ? 'shown':''}`}>
-                <p>Producto guardado con éxito</p>
+                <p>Post guardado con éxito</p>
             </div>}
         </Col>
     )
 }
 
-export default CreateProducts
+export default CreatePosts

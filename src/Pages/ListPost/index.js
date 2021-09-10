@@ -16,24 +16,24 @@ import {
     Link
 } from 'react-router-dom'
 
-const ProductCatalog = props => {
-    const [productCatalog, setProductCatalog] = useState(null)
+const ListPost = props => {
+    const [postCatalog, setPostCalog] = useState(null)
     const [ collapsed, setCollapsed ] = useState( true )
     
     useEffect( async () => {
   
-        const data = await api.getAllProducts()
-        const singleProduct = await api.getProductById("producto1")
-        const newKey = await api.createProduct({ name:"producto nuevo", 
-        description:"Producto creado desde la app"})
+        const data = await api.getAllPosts()
+        const singlePost = await api.getProductById("post1")
+        const newKey = await api.createProduct({ name:"post nuevo", 
+        description:"Post creado desde la app"})
 
-        api.deleteProductById("-Mj2FRPRHcxlJsQDsXDs")
-        api.patchProductById({name:"producto parchado"},"-Mj2GA7hNS7dNh-dar4G")
+        api.deletePostById("-Mj2FRPRHcxlJsQDsXDs")
+        api.patchPostById({name:"producto parchado"},"-Mj2GA7hNS7dNh-dar4G")
 
-        setProductCatalog(data)
+        setPostCatalog(data)
 
         console.log( data )
-        console.log( singleProduct )
+        console.log( singlePost )
        
 
     }, [])

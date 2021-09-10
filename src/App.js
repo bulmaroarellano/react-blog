@@ -21,12 +21,12 @@ import {
 
 //Pages
 // import CreateProducts from './Pages/CreateProducts';
-// import ProductCatalog from './Pages/ProductCatalog';
+//import ProductCatalog from './Pages/ProductCatalog';
 // import ShoppingCart from './Pages/ShoppingCart';
-import CreatePost from './Pages/CreatePost';
+import CreatePosts from './Pages/CreatePosts';
 import ListPost from './Pages/ListPost';
-import CreatePost from './Pages/PostDetail';
-import CreatePost from './Pages/Reactions';
+import PostDetail from './Pages/PostDetail';
+//import CreatePost from './Pages/Reactions';
 
 
 
@@ -39,18 +39,18 @@ import CustomLink from './Components/CustomLink';
 const App = () => {
   const [isOpen, setIsOpen] = useState(false);
   //const [selectedPage, setSelectedPage] = useState("createProducts")
-  const [selectedPage, setSelectedPage] = useState("createPost")
+  const [selectedPage, setSelectedPage] = useState("createPosts")
 
   const productData = [{
-    title:"product 1",
+    title:"post 1",
     content:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe, nihil.",
     id:1
   },{
-    title:"product 2",
+    title:"post 2",
     content:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe, nihil.",
     id:2
   },{
-    title:"product 3",
+    title:"post 3",
     content:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe, nihil.",
     id:3
   }]
@@ -60,7 +60,7 @@ const App = () => {
   const links = [
     {
       path:"/create-posts",
-      text:"Crear Posts"
+      text:"Create Posts"
     },
     {
       path:"/show-posts",
@@ -97,17 +97,17 @@ const App = () => {
         <Row>
           <Col xs="12">
             <Switch>
-              <Route path="/create-products">
-                <CreateProducts />
+              <Route path="/create-posts">
+                <CreatePosts />
               </Route>
-              <Route path="/product-catalog">
-                <ProductCatalog data = { productData }/>
+              <Route path="/show-posts">
+                <PostCatalog data = { productData }/>
               </Route>
-              <Route path="/shopping-cart">
+              {/* <Route path="/shopping-cart">
                 <ShoppingCart />
-              </Route>
-              <Route path="/product-detail/:id">
-                <ProductDetail />
+              </Route> */}
+              <Route path="/posts-detail/:id">
+                <PostDetail />
               </Route>
             </Switch>
           </Col>
