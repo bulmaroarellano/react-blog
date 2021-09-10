@@ -1,11 +1,11 @@
-const BASE_URL = "https://blog-12g-default-rtdb.firebaseio.com"
+const BASE_URL = "https://react-blog-kodemia-default-rtdb.firebaseio.com"
 
 export default{
     async getAllPosts(){
         let result = await fetch(`${BASE_URL}/posts/.json`)
         return await result.json() 
     },
-    async getPostById( postId ){
+    async getPostsById( postId ){
         let result = await fetch(`${BASE_URL}/posts/${postId}.json`)
         return await result.json()
     },
@@ -19,7 +19,7 @@ export default{
         })
         return await result.json()
     },
-    async deletePostById( postId ){
+    async deletePostsById( postId ){
         let result = await fetch(`${BASE_URL}/posts/${postId}.json`,{
             method:"DELETE",
             headers:{
@@ -28,7 +28,7 @@ export default{
         })
         return await result.json()
     },
-    async patchPostById( postData, postId ){
+    async patchPostsById( postData, postId ){
         let result = await fetch(`${BASE_URL}/posts/${postId}.json`,{
             method:"PATCH",
             headers:{

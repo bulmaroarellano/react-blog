@@ -22,18 +22,18 @@ const PostsCatalog = props => {
     
     useEffect( async () => {
   
-        const data = await api.getAllProducts()
-        const singleProduct = await api.getProductById("producto1")
-        const newKey = await api.createProduct({ name:"producto nuevo", 
-        description:"Producto creado desde la app"})
+        const data = await api.getAllPosts()
+        const singlePost = await api.getPostsById("post1")
+        const newKey = await api.createPosts({ title:"post nuevo", 
+        content:"Post creado desde la app"})
 
-        api.deleteProductById("-Mj2FRPRHcxlJsQDsXDs")
-        api.patchProductById({name:"producto parchado"},"-Mj2GA7hNS7dNh-dar4G")
+        api.deletePostsById("-Mj2FRPRHcxlJsQDsXDs")
+        api.patchPostsById({title:"post parchado"},"-Mj2GA7hNS7dNh-dar4G")
 
         setPostsCatalog(data)
 
         console.log( data )
-        console.log( singleProduct )
+        console.log( singlePost )
        
 
     }, [])
@@ -50,21 +50,21 @@ const PostsCatalog = props => {
             {
                 postsCatalog &&
                 <>
-                    <h1>Catálogo de productos</h1>
+                    <h1>Catálogo de posts</h1>
                     {
-                        Object.keys(postsCatalog).map(product => {
-                            console.log(postsCatalog[product])
-                            const { name, description } = postsCatalog[product]
+                        Object.keys(postsCatalog).map(posts=> {
+                                   console.log(postsCatalog[posts])
+                            const { title, content } = postsCatalog[posts]
                             return (
-                                <Col xs="12" md="4" className="mb-3" key={product}>
-                                    <Card key={product}>
+                                <Col xs="12" md="4" className="mb-3" key={posts}>
+                                    <Card key={posts}>
                                         <CardBody>
-                                            <CardTitle>{name}</CardTitle>
+                                     <CardTitle>{title}</CardTitle>
                                             <CardText collapsed={collapsed} className={ !collapsed ? "open":''}>{
                                                 collapsed
                                                     ? ( 
                                                         <>
-                                                            ${description.slice(0,20)}...
+                                                            ${content.slice(0,20)}...
                                                             <span 
                                                                 className="text-primary"
                                                                 onClick={ () =>  setCollapsed( !collapsed )}
@@ -73,7 +73,7 @@ const PostsCatalog = props => {
                                                     )  
                                                     : ( 
                                                         <>
-                                                        {description}
+                                                        {content}
                                                         <span 
                                                             className="text-primary"
                                                             onClick={ () =>  setCollapsed( !collapsed )}
@@ -85,7 +85,7 @@ const PostsCatalog = props => {
                                             <Button
                                                 color="dark"
                                                 type="button"
-                                                data-product-key={product}
+                                                data-posts-key={posts}
                                             >Ver detalles</Button>
                                         </CardBody>
                                     </Card>
