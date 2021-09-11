@@ -25,7 +25,7 @@ const CreatePosts = () => {
         result && setShowAlert( true )
         setTimeout( function(){
             setShowAlert( false )
-            document.location.href = "product-catalog"
+            document.location.href = "posts-catalog"
         },3000)
     }
 
@@ -36,11 +36,11 @@ const CreatePosts = () => {
             <Form className="bg-dark text-white p-3 my-3">
                 <FormGroup>
                     <Label>Título:</Label>
-                    <Input name="name" onChange={changeHandler} />
+                    <Input name="title" onChange={changeHandler} />
                 </FormGroup>
                 <FormGroup>
                     <Label>Contenido:</Label>
-                    <Input name="description" type="textarea" onChange={changeHandler} />
+                    <Input name="content" type="textarea" onChange={changeHandler} />
                 </FormGroup>
                 <Button type="button" color="dark" onClick={savePost}>Guardar post</Button>
             </Form>
