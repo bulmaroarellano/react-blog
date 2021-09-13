@@ -85,7 +85,7 @@ const App = () => {
                 const { path, text } = link
                 return(
                   <NavItem key={index}> 
-                      <NavLink to={path} className="nav-item">{text}</NavLink>
+                      <NavLink href={path} className="nav-item">{text}</NavLink>
                   </NavItem>
                 )
               })
