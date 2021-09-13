@@ -4,14 +4,14 @@ import {
 } from 'react-router-dom'
 import { Card, Row, Col, CardBody, CardTitle, CardText } from 'reactstrap'
 
-const ProductDetail = props => {
+const PostDetail = props => {
     const { id } = useParams()
     return(
         <Row>
             <Col xs="12">
                 <Card>
                     <CardBody>
-                        <CardTitle >Producto seleccionado { id }</CardTitle>
+                        <CardTitle >Post seleccionado { id }</CardTitle>
                         <CardText>Descripcion del Producto seleccionado</CardText>
                     </CardBody>
                 </Card>
@@ -20,4 +20,4 @@ const ProductDetail = props => {
     )
 }
 
-export default ProductDetail
+export default PostDetail

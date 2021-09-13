@@ -8,7 +8,8 @@ import {
   Container,
   Row,
   Col,
-  NavItem
+  NavItem,
+  NavLink
 } from 'reactstrap';
 
 import {
@@ -40,7 +41,7 @@ const App = () => {
   //const [selectedPage, setSelectedPage] = useState("createProducts")
   const [selectedPage, setSelectedPage] = useState("createPosts")
 
-  const productData = [{
+  const postData = [{
     title:"post 1",
     content:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe, nihil.",
     id:1
@@ -75,7 +76,7 @@ const App = () => {
   return (
     <Router>
       <Navbar color="dark" dark expand="md">
-        <NavbarBrand href="/">reactstrap</NavbarBrand>
+        <NavbarBrand href="/">Blog</NavbarBrand>
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
           <Nav className="mr-auto" navbar>
@@ -83,8 +84,8 @@ const App = () => {
               links.map( (link, index ) => {
                 const { path, text } = link
                 return(
-                  <NavItem key={index}>
-                    <Link to={path} className="nav-item">{text}</Link>
+                  <NavItem key={index}> 
+                      <NavLink to={path} className="nav-item">{text}</NavLink>
                   </NavItem>
                 )
               })
@@ -100,7 +101,7 @@ const App = () => {
                 <CreatePosts />
               </Route>
               <Route path="/show-posts">
-                <PostsCatalog data = { productData }/>
+                <PostsCatalog data = { postData }/>
               </Route>
               {/* <Route path="/shopping-cart">
                 <ShoppingCart />

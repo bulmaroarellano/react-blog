@@ -27,9 +27,6 @@ const PostsCatalog = props => {
         const newKey = await api.createPosts({ title:"post nuevo", 
         content:"Post creado desde la app"})
 
-        api.deletePostsById("-Mj2FRPRHcxlJsQDsXDs")
-        api.patchPostsById({title:"post parchado"},"-Mj2GA7hNS7dNh-dar4G")
-
         setPostsCatalog(data)
 
         console.log( data )
