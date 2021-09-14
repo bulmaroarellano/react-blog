@@ -61,7 +61,7 @@ const PostsCatalog = props => {
                                                 collapsed
                                                     ? ( 
                                                         <>
-                                                            ${content.slice(0,5)}...
+                                                            ${content.slice(0,25)}...
                                                             <span 
                                                                 className="text-primary"
                                                                 onClick={ () =>  setCollapsed( !collapsed )}
