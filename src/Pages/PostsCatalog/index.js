@@ -6,7 +6,8 @@ import {
     Row,
     Col,
     CardTitle,
-    Button
+    Button,
+    CardLink
 } from 'reactstrap'
 import api from '../../Assets/lib/api'
 
@@ -79,11 +80,9 @@ const PostsCatalog = props => {
                                                     )
                                                 }
                                             </CardText>
-                                            <Button
-                                                color="dark"
-                                                type="button"
-                                                data-posts-key={posts}
-                                            >Ver detalles</Button>
+                                            <CardLink href="#" className="btn btn-dark">Ver detalles</CardLink>
+
+                                            
                                         </CardBody>
                                     </Card>
                                 </Col>
