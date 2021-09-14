@@ -56,12 +56,12 @@ const PostsCatalog = props => {
                                 <Col xs="12" md="4" className="mb-3" key={posts}>
                                     <Card key={posts}>
                                         <CardBody>
-                                     <CardTitle>{title}</CardTitle>
+                                     <CardTitle className="text-capitalize">{title}</CardTitle>
                                             <CardText collapsed={collapsed} className={ !collapsed ? "open":''}>{
                                                 collapsed
                                                     ? ( 
                                                         <>
-                                                            ${content.slice(0,25)}...
+                                                            {content.slice(0,30)}...
                                                             <span 
                                                                 className="text-primary"
                                                                 onClick={ () =>  setCollapsed( !collapsed )}
