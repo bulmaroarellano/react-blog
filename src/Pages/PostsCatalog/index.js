@@ -52,7 +52,7 @@ const PostsCatalog = props => {
                     {
                         Object.keys(postsCatalog).map(posts=> {
                                    console.log(postsCatalog[posts])
-                            const { title, content } = postsCatalog[posts]
+                            const { title, content, id } = postsCatalog[posts]
                             return (
                                 <Col xs="12" md="4" className="mb-3" key={posts}>
                                     <Card key={posts}>
@@ -80,7 +80,7 @@ const PostsCatalog = props => {
                                                     )
                                                 }
                                             </CardText>
-                                            <CardLink href="#" className="btn btn-dark">Ver detalles</CardLink>
+                                            <CardLink href={ `/post-detail/${ posts }` } className="btn btn-dark">Ver detalles</CardLink>
 
                                             
                                         </CardBody>
