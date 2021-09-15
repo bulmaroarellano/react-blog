@@ -64,7 +64,7 @@ const App = () => {
     },
     {
       path:"/show-posts",
-      text:"All posts"
+      text:"All Posts"
     },
     // {
     //   path:"/shopping-cart",
